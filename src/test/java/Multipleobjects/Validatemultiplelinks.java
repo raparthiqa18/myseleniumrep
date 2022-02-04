@@ -5,7 +5,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -22,6 +21,7 @@ public class Validatemultiplelinks extends TestBase {
                 url=l.getAttribute("href");
                 resp_code= Request.Get(url).execute().returnResponse().getStatusLine().getStatusCode();
                 System.out.println("Response code of url: " + url +" is : " + resp_code);
+                System.out.println("Response code of url: " + url);
             }
 
         } catch (Exception e) {
