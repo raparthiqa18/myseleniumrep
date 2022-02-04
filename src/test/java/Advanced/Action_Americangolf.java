@@ -24,7 +24,7 @@ public class Action_Americangolf extends TestBase {
 
         //explicit wait
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"CLUBS_1\"]/ul/li[3]/ul/li/a/span")));
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"CLUBS_1\"]/ul/li[3]/ul/li/a/span")));
 
         driver.findElement(By.xpath("//*[@id=\"CLUBS_1\"]/ul/li[3]/ul/li/a/span")).click();
         //Thread.sleep(10000);
