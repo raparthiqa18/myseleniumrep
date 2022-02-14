@@ -23,16 +23,5 @@ public class exercise extends TestBase {
         }
     }
 
-    public static boolean isElementPresent(String elementXpath){
-        try{
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementXpath)));
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));
-            System.out.println("Pass"
-            );return true;
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        return false;
-    }
+
 }

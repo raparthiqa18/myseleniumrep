@@ -23,7 +23,8 @@ public class Action_Americangolf extends TestBase {
         act.build().perform();
 
         //explicit wait
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+
+
        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"CLUBS_1\"]/ul/li[3]/ul/li/a/span")));
 
         driver.findElement(By.xpath("//*[@id=\"CLUBS_1\"]/ul/li[3]/ul/li/a/span")).click();
@@ -59,7 +60,7 @@ public class Action_Americangolf extends TestBase {
         i=0;
         while(i!=10){
             Long d=(Long)js.executeScript("return jQuery.active;");
-            System.out.println(d);//0,1
+            System.out.println(d);//0-Active,1-Inactive
             if(d.longValue() == 0){
                 break;
             }else{

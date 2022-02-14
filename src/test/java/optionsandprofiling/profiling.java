@@ -42,8 +42,10 @@ public class profiling {
         options.addArguments("--disable notifications");
         options.addArguments("--start-maxmized");
         options.addArguments("ignore-certificate-errors");
+        options.addArguments("--headless");
+        //options.headless = True; //also works
         options.addArguments("user-data-dir=C:\\Users\\USER\\AppData\\Local\\Google\\Chrome\\User Data");
-        ChromeDriver driver=new ChromeDriver();
+        ChromeDriver driver=new ChromeDriver(options);
         driver.get("https://google.com");
 
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\USER\\Desktop\\Rakesh\\Professional\\Automation\\edgedriver_win64\\msedgedriver.exe");

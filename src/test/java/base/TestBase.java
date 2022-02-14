@@ -1,11 +1,13 @@
 package base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
@@ -20,7 +22,7 @@ public class TestBase {
     public static WebDriverWait wait=null;
     public static WebDriver launchBrowser(String browserName){
         if (browserName.equalsIgnoreCase("Chrome")){
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Desktop\\Rakesh\\Professional\\Automation\\chromedriver_win32\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Desktop\\Rakesh\\Professional\\Automation\\Webdrivers\\chromedriver_win32\\chromedriver.exe");
             ChromeOptions options=new ChromeOptions();
             options.addArguments("--disable-notifications");
             options.addArguments("--start-maximized");
@@ -47,5 +49,17 @@ public class TestBase {
             e.printStackTrace();
         }
         return driver;
+    }
+    public static boolean isElementPresent(String elementXpath){
+        try{
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementXpath)));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));
+            System.out.println("Pass");
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

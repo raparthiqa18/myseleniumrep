@@ -4,16 +4,26 @@ import base.TestBase;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 import java.io.IOException;
 import java.util.List;
 
 public class Validatemultiplelinks extends TestBase {
-    public static void main(String[] args) {
+
+      public static void main(String[] args) {
+
+
         launchBrowser("Chrome");
         String url="https://www.cnn.com";
+
+
         driver.get(url);
         int resp_code=0;
+
         List<WebElement> links=driver.findElements(By.tagName("a"));
         try {
             for (WebElement l: links ) {

@@ -1,0 +1,43 @@
+xpaths:
+
+linkedin | login page | username
+fullXpath:
+/html/body/div/main/div[2]/div[1]/form/div[1]/input
+
+partial xpath:
+//*[@id='username']
+
+custom xpaths
+//input[@id='username'] or //input[@name='session_key']
+
+example of one element can have multiple xpaths
+Facebook | login page | username
+//*[@id="email"]
+//input[@class='inputtext _55r1 _6luy']
+//input[@id='email' and @name='email']
+
+Facebook | login page | username
+/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input
+as there is no id found while traversing from html to input tag when we extract xpath, it will give complete xpath as above
+custom xpath:
+//form[@autocomplete='on']/div[1]/input
+
+elements with same look and feel would have same class name:
+Flipkart | mobiles page | mobile name
+//div[@class='_4rR01T']
+
+//identify elements based on text
+
+cricinfo | main page | links with text
+//a[text()='Features']
+
+variable IDs
+snapdeal|shoes|
+<span class="lfloat product-price" id="display-price-648358273375" display-price="825" data-price="825">Rs.  825</span>
+id=display-price-648358273375
+
+XXXXXXXXX648358   //*[starts-with(@id, 'XXXXXXXXX')]   or //*[contains(@id,'XXXXXXXXX')]
+648358XXXXXXXXX   //*[contains(@id,'XXXXXXXXX')]
+1231414XXXXXXXXX3474 //*[contains(@id,'XXXXXXXXX')]
+
+
