@@ -34,7 +34,10 @@ public class Action_Americangolf extends TestBase {
         WebElement slider=driver.findElements(By.xpath("//div[@class='noUi-handle noUi-handle-lower']")).get(1);
         int y=slider.getLocation().y-100;//y-100 so that page is scrolled and the slider is visible
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("window.scrollTo(0, "+y+")");//******* To scroll down the page  *******
+        //js.executeScript("window.scrollTo(0, "+y+")");//******* To scroll down the page  *******
+        //or below
+        js.executeScript("arguments[0].scrollIntoView(true);", slider);
+        js.executeScript("arguments[0].style.border='5px solid red'", slider);
 
         act.clickAndHold(slider).moveByOffset(100,0).release().build().perform(); //x=100, so that slider moves in x-axis *******
 

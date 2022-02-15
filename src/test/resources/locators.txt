@@ -39,5 +39,99 @@ id=display-price-648358273375
 XXXXXXXXX648358   //*[starts-with(@id, 'XXXXXXXXX')]   or //*[contains(@id,'XXXXXXXXX')]
 648358XXXXXXXXX   //*[contains(@id,'XXXXXXXXX')]
 1231414XXXXXXXXX3474 //*[contains(@id,'XXXXXXXXX')]
+==========================================================================================================================
+Position
+cnn.com topmenu
+//ul[@class='sc-cSHVUG bYPcOh']//li[3]/a
+or
+//ul[@class='sc-cSHVUG bYPcOh']//li[position()=3]/a
+
+flipkart - bottom of the page, get all links under the div
+//div[@class='_2Brcj4']/a
+or
+//div[@class='_2Brcj4']/descendant::a
+//div[@class='_2Brcj4']/descendant::a[2]
+
+similarly for ancestors: //div[@class='_2Brcj4']/ancestor::div
+
+Parent Child
+//div[@class="_3rc_xQ"]/child::div   =>to retrieve immediate child only and not all descendants
+//div[@class="_3rc_xQ"]/parent::div  =>to retrieve immediate parent only and not all ancestors
+
+Following/Preceding
+following-> elements after an elent
+//div[@class="_3rc_xQ"]/following::div
+//div[@class="_3rc_xQ"]/preceding::div
+
+Following-sibling/Preceding-sibling
+//li[@data-section='world']/following-sibling::li  => cnn.com gives the parallel siblings elements
+
+https://www.keynotesupport.com/internet/web-contact-form-example-radio-buttons.shtml
+To click the radio button beside the text "QuickBooks Pro"
+//span[text()='QuickBooks Pro']/input
+
+ex: https://api.jquery.com/dblclick/   doublick image
+//span[text()= 'Double click the block']/preceding-sibling::div
+or
+//span[text()= 'Double click the block']/parent::body/div
+
+==========================================================================================================
+CSS
+
+# id
+. class
+
+linkedin signin ex
+#username or input#username or input[id=username]
+.form__label--floating
+
+Flipkart username ex:
+class=_2IX_2- _3umUoc VJZDxU
+._2IX_2- _3umUoc VJZDxU => CSS would not work as compound classes will not work using css and works with xpath
+._2IX_2-._3umUoc.VJZDxU   => this works (space replaced by .)
+
+
+form[autocomplete=on] > div:nth-child(1) > input   => to get all input box elements
+or
+form[autocomplete=on]  input  => to get all input box elements
+We need not put elements in between root and element for css as it can directly traverse to any element in the page
+unlike xpath which traverses from top-bottom and left to right
+
+to retreieve teh 3rd input
+form[autocomplete=on]  > div:nth-child(1) input:nth-child(2)
+or
+form[autocomplete=on]  > div:nth-child(1) :nth-child(2)  => need not mention tagname
+
+nth-child is directly the child count
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

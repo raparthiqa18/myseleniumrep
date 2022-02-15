@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/USER/Desktop/Rakesh/Professional/Automation/SeleniumPractice/src/test/java/testNG/FirstTest.java">
+        <classes><class name="testNG.FirstTest">
+            <methods>
+                <include name="Secondfasttest"/>
+                <include name="fasttest"/>
+                <include name="Thirdfasttest"/>
+                <include name="Firstslowtest"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>
