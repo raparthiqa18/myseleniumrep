@@ -28,6 +28,7 @@ public class TestBase {
             options.addArguments("--start-maximized");
             options.addArguments("disable-infobars");
             options.addArguments("--disable-extensions");
+            //options.addArguments("--headless");
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);//normal, eager, none
 //            options.addArguments("user-data-dir=C:\\Users\\USER\\AppData\\Local\\Google\\Chrome\\User Data");
             driver=new ChromeDriver(options);
@@ -44,7 +45,7 @@ public class TestBase {
             FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//Project.properties");
             prop.load(fis);
             url=prop.getProperty("url");
-            System.out.println(url);
+            //System.out.println(url);
         } catch (Exception e) {
             e.printStackTrace();
         }
