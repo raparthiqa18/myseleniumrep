@@ -1,0 +1,31 @@
+JavascriptExecutor js= (JavascriptExecutor) driver;//Initialize
+
+
+//To scroll to the Top of the window
+js.executeScript("window.scrollTo(0,0)");
+
+//To scroll to a particlar location in the page
+js.executeScript("window.scrollTo(0,100)");
+
+//To navigate to a webpage
+js.executeScript("window.location='https://www.linkedin.com/login'");
+
+//To check the whether page has loaded
+js.executeScript("return document.readyState;");//returns => complete, loading, interactive
+
+//To check JQuery/Ajax call is completed
+js.executeScript("return jQuery.active;");//returns => 0 means that at present no ajax or jquery is running on the page// 1 means or jquery is running
+
+//Scroll down the page to a particular webelement
+WebElement certbt=driver.findElement(By.xpath("//*[@id=\"getdiploma\"]/a"));
+js.executeScript("arguments[0].scrollIntoView(true);", certbt);
+
+// To retreive the title of webpage
+String script="return document.title;";
+String title= (String) js.executeScript(script, args);
+
+//operate on webelement
+js.executeScript("document.getElementById('username').value='test'");//.value is to set the value
+
+//To handle shadow root
+js.executeScript("document.querySelector(\"sections-de-signup-form\").shadowRoot.querySelector('dx-input').shadowRoot.querySelector('input').value=\"test\"");
