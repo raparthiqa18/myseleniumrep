@@ -4,9 +4,8 @@ import base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class JSandActions extends TestBase {
+public class Javascriptexec extends TestBase {
     public static void main(String[] args) {
 
         launchBrowser("chrome");
@@ -38,7 +37,9 @@ public class JSandActions extends TestBase {
             WebElement certbt=driver.findElement(By.xpath("//*[@id=\"getdiploma\"]/a"));
             js.executeScript("arguments[0].scrollIntoView(true);", certbt);
             js.executeScript("arguments[0].style.border='5px solid red'", certbt);
-            Thread.sleep(2000); */
+            Thread.sleep(2000);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,250)", "");*/
 
             //6. Click on a webelement
             driver.navigate().to("https://login.yahoo.com/");

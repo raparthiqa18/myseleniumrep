@@ -1,4 +1,4 @@
-package identifyingElements;
+package Test.identifyingElements;
 
 import base.TestBase;
 import org.openqa.selenium.By;
@@ -18,7 +18,7 @@ public class Radiobuttons extends TestBase {
         System.out.println(rdbtns.get(1).getAttribute("checked"));
         System.out.println(rdbtns.get(2).getAttribute("checked"));
         System.out.println(rdbtns.get(2).getAttribute("value"));
-        driver.findElement(By.xpath("//a[text()='Well']"));
+        driver.findElement(By.xpath("//input[text()='Well']")).click();
 
 
 

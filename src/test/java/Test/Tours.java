@@ -30,6 +30,7 @@ public class Tours extends TestBase {
     public static String getLinkUrl(WebDriver driver, String linkText) {
         String retstr=null;
         WebElement link=driver.findElement(By.xpath("//a[text()='"+linkText + "']"));
+
         try{
             if (link.isDisplayed()){
                 retstr=link.getAttribute("href");
@@ -39,5 +40,6 @@ public class Tours extends TestBase {
         }
         return retstr;
     }
+
 
 }

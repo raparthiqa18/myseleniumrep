@@ -1,5 +1,6 @@
 package base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,7 @@ public class TestBase {
     public static WebDriverWait wait=null;
     public static WebDriver launchBrowser(String browserName){
         if (browserName.equalsIgnoreCase("Chrome")){
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Desktop\\Rakesh\\Professional\\Automation\\Webdrivers\\chromedriver_win32\\chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Desktop\\Rakesh\\Professional\\Automation\\Webdrivers\\chromedriver_win32\\chromedriver.exe");
             ChromeOptions options=new ChromeOptions();
             options.addArguments("--disable-notifications");
             options.addArguments("--start-maximized");
@@ -31,6 +32,7 @@ public class TestBase {
             //options.addArguments("--headless");
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);//normal, eager, none
 //            options.addArguments("user-data-dir=C:\\Users\\USER\\AppData\\Local\\Google\\Chrome\\User Data");
+            WebDriverManager.chromedriver().setup();//selenium 4 feature
             driver=new ChromeDriver(options);
         }else if (browserName.equalsIgnoreCase("Firefox")){
             driver=new FirefoxDriver();

@@ -15,7 +15,7 @@ public class DoubleclickActions extends TestBase {
         try{
             driver.switchTo().frame(driver.findElement(By.xpath("//iframe")));
             WebElement obj=driver.findElement(By.xpath("//span[text()= 'Double click the block']/parent::body/div"));
-            act.doubleClick(obj).perform();
+            act.doubleClick(obj).build().perform();
 
         }catch (Exception e){
             e.printStackTrace();
